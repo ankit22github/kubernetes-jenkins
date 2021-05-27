@@ -14,6 +14,7 @@ pipeline {
         sh 'kubectl apply -f deploy.yml --kubeconfig  /jenkins-kube/admin.conf'
       }
     }
+  }
     post {
       success {
         echo "all good :))"
@@ -25,5 +26,4 @@ pipeline {
         echo "always :<|"
       }
     }
-  }
 }
