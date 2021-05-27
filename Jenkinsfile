@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('abc') {
       steps {
-        sh 'kubectl apply -f deploy.yaml --kubeconfig /jenkins-kube/admin.conf'
+        sh 'kubectl apply -f deploy.yml --kubeconfig /jenkins-kube/admin.conf'
       }
     }
   }
