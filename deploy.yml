@@ -1,11 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mydeploy1
-  labels:
-    app: prod
+  name: "myd"
+
 spec:
-  replicas: 2
-  containers:
-    - name: myc1
-      image: httpd
+  replicas: 1
+  selector:
+    matchLabels:
+      env: prod
+  template:
+    metadata:
+      name: "webpod"
+      labels:
+        env: prod
+    spec:
+      containers:
+      - name: "cont1"
+        image: "httpd"
