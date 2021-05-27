@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydeploy1
+  labels:
+    app: prod
+spec:
+  replicas: 2
+  containers:
+    - name: myc1
+      image: httpd
